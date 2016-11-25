@@ -12,10 +12,3 @@ LANGUAGES = (
     ('zh-hans', _('Simplified Chinese')),
     ('en', _('English')),
 )
-
-LOCALE_PATHS = (
-    os.path.join(CRWYADMIN_DIR, "crwyadmin/locale"),
-)
-
-
-STATIC_ROOT = os.path.join(os.path.dirname(CRWYADMIN_DIR), 'static')
