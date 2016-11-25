@@ -1,0 +1,7 @@
+include MANIFEST.in
+include README.rst
+include requirements.txt
+include crwyadmin/VERSION
+recursive-include crwyadmin/templates *
+recursive-include crwyadmin/static *
+recursive-include crwyadmin/locale *
