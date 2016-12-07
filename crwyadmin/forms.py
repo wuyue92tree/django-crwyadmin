@@ -1,7 +1,49 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from django.contrib.auth.models import User, Group
-from .models import *
+from django.contrib.auth.models import User
+from django.contrib.admin.helpers import ActionForm
+from django.contrib.auth.forms import UserChangeForm, AdminPasswordChangeForm
+from django.utils.translation import ugettext_lazy as _
+from crwyadmin.models import CrwyadminConfig
+
+
+class CrwyActionForm(ActionForm):
+    action = forms.ChoiceField(label=_('Action:'), widget=forms.Select(attrs={'class': 'form-control', 'id': 'action'}))
+
+
+class CrwyUserChangeForm(UserChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(CrwyUserChangeForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['first_name'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['last_name'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['email'].widget = forms.EmailInput(attrs={'class': 'form-control'})
+        self.fields['groups'].widget = forms.SelectMultiple(attrs={'class': 'form-control'})
+        self.fields['user_permissions'].widget = forms.SelectMultiple(attrs={'class': 'form-control'})
+        self.fields['last_login'].widget = forms.DateTimeInput(attrs={'class': 'form-control'})
+        self.fields['date_joined'].widget = forms.DateTimeInput(attrs={'class': 'form-control'})
+
+
+class CrwyAdminPasswordChangeForm(AdminPasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(CrwyAdminPasswordChangeForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control'})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control'})
+
+
+class CrwyConfigForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(CrwyConfigForm, self).__init__(*args, **kwargs)
+        self.fields['is_register'].widget = forms.CheckboxInput()
+        self.fields['is_forgetpasswd'].widget = forms.CheckboxInput()
+        self.fields['manager_email'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['version'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['version'].disabled = True
+        self.fields['version'].required = True
+
+    class Meta:
+        model = CrwyadminConfig
+        exclude = ('slug',)
 
 
 class LoginForm(forms.Form):
@@ -26,40 +68,4 @@ class RegisterForm(forms.ModelForm):
             'username': {'required': "用户名不能为空", 'invalid': "不是一个有效的用户名格式"},
             'password': {'required': "密码不能为空", 'min_length': "密码最小长度为六位", 'max_length': '密码最大长度为十位'},
             'email': {'required': "邮箱不能为空", 'invalid': "不是一个有效的邮箱格式"}
-        }
-
-
-# class AccountsColumnsForm(forms.ModelForm):
-#     class Meta:
-#         model = AccountsColumns
-#         fields = ('level', 'name', 'link', 'link_type', 'is_link', 'icon', 'parent_id', 'tag', 'app')
-
-
-class AccountsUsersForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(AccountsUsersForm, self).__init__(*args, **kwargs)
-        self.fields['email'].required = True
-
-    class Meta:
-        model = User
-        fields = ('username', 'password', 'email', 'first_name', 'last_name', 'groups', 'is_active', 'is_staff', 'is_superuser')
-        widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '用户名'}),
-            'password': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '密码'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '邮箱'}),
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '名'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '姓'}),
-            'groups': forms.SelectMultiple(attrs={'class': 'form-control'}),
-            # 'is_active': forms.Checkbox(attrs={'class': 'form-control'}),
-            # 'is_staff': forms.CheckboxInput(attrs={'class': 'form-control'}),
-            # 'is_superuser': forms.CheckboxInput(attrs={'class': 'form-control'}),
-        }
-
-class AccountsGroupsForm(forms.ModelForm):
-    class Meta:
-        model = Group
-        fields = '__all__'
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '用户组名称'}),
-            'permissions': forms.SelectMultiple(attrs={'class': 'form-control'}),
         }

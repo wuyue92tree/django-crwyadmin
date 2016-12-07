@@ -1,23 +1,29 @@
 {% load i18n admin_static %}<!DOCTYPE html>
-<html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>{% block title %}{% endblock %}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href={% static "crwyadmin/bootstrap/css/bootstrap.min.css" %}>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//cdn.bootcss.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="//cdn.bootcss.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href={% static "crwyadmin/dist/css/AdminLTE.min.css" %}>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href={% static "crwyadmin/dist/css/skins/_all-skins.min.css" %}>
-  {% block custom_style %}{% endblock %}
+
+  <!--<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />-->
+
+  {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+
+  {% block extrastyle %}{% endblock %}
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,10 +31,11 @@
   <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="content">
-    {% block content %}{% endblock %}
+    {% block page_content %}{% endblock %}
   </div>
 
 <!-- jQuery 2.2.3 -->
@@ -43,6 +50,6 @@
 <script src={% static "crwyadmin/dist/js/app.min.js" %}></script>
 <!-- AdminLTE for demo purposes -->
 <script src={% static "crwyadmin/dist/js/demo.js" %}></script>
-{% block other_js %}{% endblock %}
+{% block extrahead %}{% endblock %}
 </body>
 </html>

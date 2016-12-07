@@ -1,0 +1,8 @@
+{% load i18n %}
+<h5>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h5>
+<ul class="list-group list-group-unbordered">
+{% for choice in choices %}
+    <li class="list-group-item">
+    <a href="{{ choice.query_string|iriencode }}"  {% if choice.selected %}style="color:red"{% endif %}>{{ choice.display }}</a></li>
+{% endfor %}
+</ul>

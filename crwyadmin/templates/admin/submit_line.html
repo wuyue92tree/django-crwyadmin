@@ -1,0 +1,34 @@
+{% load i18n admin_urls %}
+<hr>
+<div class="form-group">
+    <div class="col-xs-1 col-xs-push-10">
+        {% if show_save %}
+        <input type="submit" value="{% trans 'Save' %}" class="btn btn-primary" name="_save" />
+        {% endif %}
+    </div>
+    <div class="col-xs-1 col-xs-pull-1">
+        {% if show_delete_link %}
+        {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
+        <p class="deletelink-box">
+            <a href="{% add_preserved_filters delete_url %}" class="btn btn-danger">
+                {% trans "Delete" %}
+            </a>
+        </p>
+        {% endif %}
+    </div>
+    <div class="col-xs-2 col-xs-push-2 hidden-xs">
+        {% if show_save_as_new %}
+        <input type="submit" value="{% trans 'Save as new' %}" class="btn btn-default" name="_saveasnew" />
+        {% endif %}
+    </div>
+    <div class="col-xs-2 col-xs-push-2 hidden-xs">
+        {% if show_save_and_add_another %}
+        <input type="submit" value="{% trans 'Save and add another' %}" class="btn btn-default" name="_addanother" />
+        {% endif %}
+    </div>
+    <div class="col-xs-2 col-xs-push-2 hidden-xs">
+        {% if show_save_and_continue %}
+        <input type="submit" value="{% trans 'Save and continue editing' %}" class="btn btn-default" name="_continue" />
+        {% endif %}
+    </div>
+</div>

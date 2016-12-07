@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 17:26+0800\n"
+"POT-Creation-Date: 2016-12-03 21:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: admin.py:56
+#, fuzzy
+#| msgid "User info"
+msgid "Personal info"
+msgstr "用户信息"
+
+#: admin.py:57
+msgid "Permissions"
+msgstr ""
+
+#: admin.py:59
+#, fuzzy
+#| msgid "Important"
+msgid "Important dates"
+msgstr "重要"
+
+#: admin.py:143
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
+
+#: admin.py:153
+msgid "Password changed successfully."
+msgstr ""
+
+#: admin.py:173
+#, fuzzy, python-format
+#| msgid "Forgot password ?"
+msgid "Change password: %s"
+msgstr "忘记密码？"
+
 #: config.py:12
 msgid "Simplified Chinese"
 msgstr ""
 
 #: config.py:13
 msgid "English"
+msgstr ""
+
+#: forms.py:8
+msgid "Action:"
 msgstr ""
 
 #: sites.py:10
@@ -33,6 +68,27 @@ msgstr "Crwy管理平台"
 #: sites.py:11
 msgid "Crwy site admin"
 msgstr "Crwy站点管理中心"
+
+#: templates/admin/actions.html:19 templates/tmpadmin/actions.html:4
+msgid "Run the selected action"
+msgstr ""
+
+#: templates/admin/actions.html:19 templates/tmpadmin/actions.html:4
+msgid "Go"
+msgstr ""
+
+#: templates/admin/actions.html:31 templates/tmpadmin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: templates/admin/actions.html:31 templates/tmpadmin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: templates/admin/actions.html:33 templates/tmpadmin/actions.html:12
+msgid "Clear selection"
+msgstr ""
 
 #: templates/admin/base.html:270
 msgid "Super manager"
@@ -49,14 +105,11 @@ msgstr "注册时间"
 #: templates/admin/base.html:299
 #: templates/tmpadmin/auth/user/change_password.html:17
 #: templates/tmpadmin/auth/user/change_password.html:54
-#: templates/tmpadmin/registration/password_change_done.html:3
-#: templates/tmpadmin/registration/password_change_form.html:4
+#: templates/tmpadmin/base.html:44
 msgid "Change password"
 msgstr ""
 
-#: templates/admin/base.html:302
-#: templates/tmpadmin/registration/password_change_done.html:3
-#: templates/tmpadmin/registration/password_change_form.html:4
+#: templates/admin/base.html:302 templates/tmpadmin/base.html:46
 msgid "Log out"
 msgstr "注销"
 
@@ -64,7 +117,8 @@ msgstr "注销"
 msgid "Online"
 msgstr "在线"
 
-#: templates/admin/base.html:332 templates/tmpadmin/search_form.html:7
+#: templates/admin/base.html:332 templates/admin/search_form.html:9
+#: templates/tmpadmin/search_form.html:7
 msgid "Search"
 msgstr "搜索"
 
@@ -96,9 +150,82 @@ msgstr "警告"
 msgid "Information"
 msgstr "通知"
 
+#: templates/admin/base_site.html:15 templates/admin/change_form.html:18
+#: templates/admin/change_list.html:32 templates/tmpadmin/500.html:6
+#: templates/tmpadmin/app_index.html:9
+#: templates/tmpadmin/auth/user/change_password.html:13
+#: templates/tmpadmin/base.html:56 templates/tmpadmin/change_form.html:18
+#: templates/tmpadmin/change_list.html:31
+#: templates/tmpadmin/delete_confirmation.html:13
+#: templates/tmpadmin/delete_selected_confirmation.html:13
+#: templates/tmpadmin/invalid_setup.html:6
+#: templates/tmpadmin/object_history.html:6
+msgid "Home"
+msgstr ""
+
+#: templates/admin/base_site.html:43
+msgid "workplace"
+msgstr "工作台"
+
+#: templates/admin/change_form.html:21 templates/admin/change_list.html:48
+#: templates/tmpadmin/change_form.html:21
+#: templates/tmpadmin/change_list.html:49
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/change_form.html:30 templates/tmpadmin/change_form.html:33
+#: templates/tmpadmin/object_history.html:10
+msgid "History"
+msgstr ""
+
+#: templates/admin/change_form.html:31 templates/tmpadmin/change_form.html:35
+#: templates/tmpadmin/edit_inline/stacked.html:14
+#: templates/tmpadmin/edit_inline/tabular.html:36
+msgid "View on site"
+msgstr ""
+
+#: templates/admin/change_form.html:45 templates/admin/change_list.html:58
+#: templates/tmpadmin/auth/user/change_password.html:27
+#: templates/tmpadmin/change_form.html:47
+#: templates/tmpadmin/change_list.html:58 templates/tmpadmin/login.html:21
+msgid "Please correct the error below."
+msgstr ""
+
+#: templates/admin/change_form.html:45 templates/admin/change_list.html:58
+#: templates/tmpadmin/auth/user/change_password.html:27
+#: templates/tmpadmin/change_form.html:47
+#: templates/tmpadmin/change_list.html:58 templates/tmpadmin/login.html:21
+msgid "Please correct the errors below."
+msgstr ""
+
+#: templates/admin/change_list.html:87 templates/tmpadmin/change_list.html:69
+msgid "Filter"
+msgstr ""
+
+#: templates/admin/change_list_results.html:19
+#: templates/tmpadmin/change_list_results.html:17
+msgid "Remove from sorting"
+msgstr ""
+
+#: templates/admin/change_list_results.html:20
+#: templates/tmpadmin/change_list_results.html:18
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: templates/admin/change_list_results.html:21
+#: templates/tmpadmin/change_list_results.html:19
+msgid "Toggle sorting"
+msgstr ""
+
+#: templates/admin/filter.html:2 templates/tmpadmin/filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
 #: templates/admin/login.html:7 templates/admin/login.html:70
 #: templates/tmpadmin/login.html:61
-#: templates/tmpadmin/registration/password_reset_complete.html:18
 msgid "Log in"
 msgstr ""
 
@@ -138,6 +265,47 @@ msgstr "忘记密码？"
 #: templates/crwyadmin/register.html:76
 msgid "Register"
 msgstr "注册"
+
+#: templates/admin/pagination.html:19 templates/admin/search_form.html:16
+#: templates/tmpadmin/pagination.html:10 templates/tmpadmin/search_form.html:9
+msgid "Show all"
+msgstr ""
+
+#: templates/admin/pagination.html:20 templates/admin/submit_line.html:3
+#: templates/tmpadmin/pagination.html:11 templates/tmpadmin/submit_line.html:3
+msgid "Save"
+msgstr ""
+
+#: templates/admin/search_form.html:16 templates/tmpadmin/search_form.html:9
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/search_form.html:16 templates/tmpadmin/search_form.html:9
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: templates/admin/submit_line.html:6
+#: templates/tmpadmin/delete_confirmation.html:17
+#: templates/tmpadmin/related_widget_wrapper.html:23
+#: templates/tmpadmin/submit_line.html:6
+msgid "Delete"
+msgstr ""
+
+#: templates/admin/submit_line.html:8 templates/tmpadmin/submit_line.html:8
+msgid "Save as new"
+msgstr ""
+
+#: templates/admin/submit_line.html:9 templates/tmpadmin/submit_line.html:9
+msgid "Save and add another"
+msgstr ""
+
+#: templates/admin/submit_line.html:10 templates/tmpadmin/submit_line.html:10
+msgid "Save and continue editing"
+msgstr ""
 
 #: templates/crwyadmin/index1.html:5
 msgid "Hi, This is the system index page. And you account name is"
@@ -179,24 +347,6 @@ msgstr ""
 msgid "We're sorry, but the requested page could not be found."
 msgstr ""
 
-#: templates/tmpadmin/500.html:6 templates/tmpadmin/app_index.html:9
-#: templates/tmpadmin/auth/user/change_password.html:13
-#: templates/tmpadmin/base.html:26 templates/tmpadmin/change_form.html:18
-#: templates/tmpadmin/change_list.html:40
-#: templates/tmpadmin/delete_confirmation.html:8
-#: templates/tmpadmin/delete_selected_confirmation.html:8
-#: templates/tmpadmin/invalid_setup.html:6
-#: templates/tmpadmin/object_history.html:6
-#: templates/tmpadmin/registration/logged_out.html:4
-#: templates/tmpadmin/registration/password_change_done.html:6
-#: templates/tmpadmin/registration/password_change_form.html:7
-#: templates/tmpadmin/registration/password_reset_complete.html:6
-#: templates/tmpadmin/registration/password_reset_confirm.html:6
-#: templates/tmpadmin/registration/password_reset_done.html:6
-#: templates/tmpadmin/registration/password_reset_form.html:6
-msgid "Home"
-msgstr ""
-
 #: templates/tmpadmin/500.html:7
 msgid "Server error"
 msgstr ""
@@ -215,27 +365,6 @@ msgid ""
 "email and should be fixed shortly. Thanks for your patience."
 msgstr ""
 
-#: templates/tmpadmin/actions.html:4
-msgid "Run the selected action"
-msgstr ""
-
-#: templates/tmpadmin/actions.html:4
-msgid "Go"
-msgstr ""
-
-#: templates/tmpadmin/actions.html:11
-msgid "Click here to select the objects across all pages"
-msgstr ""
-
-#: templates/tmpadmin/actions.html:11
-#, python-format
-msgid "Select all %(total_count)s %(module_name)s"
-msgstr ""
-
-#: templates/tmpadmin/actions.html:13
-msgid "Clear selection"
-msgstr ""
-
 #: templates/tmpadmin/auth/user/add_form.html:6
 msgid ""
 "First, enter a username and password. Then, you'll be able to edit more user "
@@ -246,23 +375,21 @@ msgstr ""
 msgid "Enter a username and password."
 msgstr ""
 
-#: templates/tmpadmin/auth/user/change_password.html:27
-#: templates/tmpadmin/change_form.html:47
-#: templates/tmpadmin/change_list.html:67 templates/tmpadmin/login.html:21
-#: templates/tmpadmin/registration/password_change_form.html:21
-msgid "Please correct the error below."
-msgstr ""
-
-#: templates/tmpadmin/auth/user/change_password.html:27
-#: templates/tmpadmin/change_form.html:47
-#: templates/tmpadmin/change_list.html:67 templates/tmpadmin/login.html:21
-#: templates/tmpadmin/registration/password_change_form.html:21
-msgid "Please correct the errors below."
-msgstr ""
-
 #: templates/tmpadmin/auth/user/change_password.html:31
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: templates/tmpadmin/base.html:30
+msgid "Welcome,"
+msgstr ""
+
+#: templates/tmpadmin/base.html:35
+msgid "View site"
+msgstr ""
+
+#: templates/tmpadmin/base.html:40
+msgid "Documentation"
 msgstr ""
 
 #: templates/tmpadmin/base_site.html:3
@@ -273,51 +400,7 @@ msgstr ""
 msgid "Django administration"
 msgstr ""
 
-#: templates/tmpadmin/change_form.html:21 templates/tmpadmin/index.html:31
-#: templates/tmpadmin/related_widget_wrapper.html:16
-msgid "Add"
-msgstr ""
-
-#: templates/tmpadmin/change_form.html:33
-#: templates/tmpadmin/object_history.html:10
-msgid "History"
-msgstr ""
-
-#: templates/tmpadmin/change_form.html:35
-#: templates/tmpadmin/edit_inline/stacked.html:10
-#: templates/tmpadmin/edit_inline/tabular.html:33
-msgid "View on site"
-msgstr ""
-
-#: templates/tmpadmin/change_list.html:58
-#, python-format
-msgid "Add %(name)s"
-msgstr ""
-
-#: templates/tmpadmin/change_list.html:78
-msgid "Filter"
-msgstr ""
-
-#: templates/tmpadmin/change_list_results.html:17
-msgid "Remove from sorting"
-msgstr ""
-
-#: templates/tmpadmin/change_list_results.html:18
-#, python-format
-msgid "Sorting priority: %(priority_number)s"
-msgstr ""
-
-#: templates/tmpadmin/change_list_results.html:19
-msgid "Toggle sorting"
-msgstr ""
-
-#: templates/tmpadmin/delete_confirmation.html:12
-#: templates/tmpadmin/related_widget_wrapper.html:23
-#: templates/tmpadmin/submit_line.html:6
-msgid "Delete"
-msgstr ""
-
-#: templates/tmpadmin/delete_confirmation.html:18
+#: templates/tmpadmin/delete_confirmation.html:23
 #, python-format
 msgid ""
 "Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
@@ -325,40 +408,40 @@ msgid ""
 "following types of objects:"
 msgstr ""
 
-#: templates/tmpadmin/delete_confirmation.html:25
+#: templates/tmpadmin/delete_confirmation.html:30
 #, python-format
 msgid ""
 "Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
 "following protected related objects:"
 msgstr ""
 
-#: templates/tmpadmin/delete_confirmation.html:32
+#: templates/tmpadmin/delete_confirmation.html:37
 #, python-format
 msgid ""
 "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
 "All of the following related items will be deleted:"
 msgstr ""
 
-#: templates/tmpadmin/delete_confirmation.html:34
-#: templates/tmpadmin/delete_selected_confirmation.html:33
+#: templates/tmpadmin/delete_confirmation.html:39
+#: templates/tmpadmin/delete_selected_confirmation.html:38
 msgid "Objects"
 msgstr ""
 
-#: templates/tmpadmin/delete_confirmation.html:41
-#: templates/tmpadmin/delete_selected_confirmation.html:44
+#: templates/tmpadmin/delete_confirmation.html:46
+#: templates/tmpadmin/delete_selected_confirmation.html:49
 msgid "Yes, I'm sure"
 msgstr ""
 
-#: templates/tmpadmin/delete_confirmation.html:42
-#: templates/tmpadmin/delete_selected_confirmation.html:45
+#: templates/tmpadmin/delete_confirmation.html:47
+#: templates/tmpadmin/delete_selected_confirmation.html:50
 msgid "No, take me back"
 msgstr ""
 
-#: templates/tmpadmin/delete_selected_confirmation.html:11
+#: templates/tmpadmin/delete_selected_confirmation.html:16
 msgid "Delete multiple objects"
 msgstr ""
 
-#: templates/tmpadmin/delete_selected_confirmation.html:17
+#: templates/tmpadmin/delete_selected_confirmation.html:22
 #, python-format
 msgid ""
 "Deleting the selected %(objects_name)s would result in deleting related "
@@ -366,45 +449,29 @@ msgid ""
 "types of objects:"
 msgstr ""
 
-#: templates/tmpadmin/delete_selected_confirmation.html:24
+#: templates/tmpadmin/delete_selected_confirmation.html:29
 #, python-format
 msgid ""
 "Deleting the selected %(objects_name)s would require deleting the following "
 "protected related objects:"
 msgstr ""
 
-#: templates/tmpadmin/delete_selected_confirmation.html:31
+#: templates/tmpadmin/delete_selected_confirmation.html:36
 #, python-format
 msgid ""
 "Are you sure you want to delete the selected %(objects_name)s? All of the "
 "following objects and their related items will be deleted:"
 msgstr ""
 
-#: templates/tmpadmin/edit_inline/stacked.html:8
-#: templates/tmpadmin/edit_inline/tabular.html:31
+#: templates/tmpadmin/edit_inline/stacked.html:12
+#: templates/tmpadmin/edit_inline/tabular.html:34
 #: templates/tmpadmin/index.html:37
 #: templates/tmpadmin/related_widget_wrapper.html:9
 msgid "Change"
 msgstr ""
 
-#: templates/tmpadmin/edit_inline/stacked.html:26
-#: templates/tmpadmin/edit_inline/tabular.html:80
-msgid "Remove"
-msgstr ""
-
-#: templates/tmpadmin/edit_inline/stacked.html:27
-#: templates/tmpadmin/edit_inline/tabular.html:79
-#, python-format
-msgid "Add another %(verbose_name)s"
-msgstr ""
-
-#: templates/tmpadmin/edit_inline/tabular.html:17
+#: templates/tmpadmin/edit_inline/tabular.html:20
 msgid "Delete?"
-msgstr ""
-
-#: templates/tmpadmin/filter.html:2
-#, python-format
-msgid " By %(filter_title)s "
 msgstr ""
 
 #: templates/tmpadmin/includes/object_delete_summary.html:2
@@ -416,16 +483,21 @@ msgstr ""
 msgid "Models in the %(name)s application"
 msgstr ""
 
+#: templates/tmpadmin/index.html:31
+#: templates/tmpadmin/related_widget_wrapper.html:16
+msgid "Add"
+msgstr ""
+
 #: templates/tmpadmin/index.html:47
 msgid "You don't have permission to edit anything."
 msgstr ""
 
 #: templates/tmpadmin/index.html:55
-msgid "Recent Actions"
+msgid "Recent actions"
 msgstr ""
 
 #: templates/tmpadmin/index.html:56
-msgid "My Actions"
+msgid "My actions"
 msgstr ""
 
 #: templates/tmpadmin/index.html:60
@@ -472,133 +544,8 @@ msgid ""
 "admin site."
 msgstr ""
 
-#: templates/tmpadmin/pagination.html:10 templates/tmpadmin/search_form.html:9
-msgid "Show all"
-msgstr ""
-
-#: templates/tmpadmin/pagination.html:11 templates/tmpadmin/submit_line.html:3
-msgid "Save"
-msgstr ""
-
 #: templates/tmpadmin/popup_response.html:3
 msgid "Popup closing..."
-msgstr ""
-
-#: templates/tmpadmin/registration/logged_out.html:8
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr ""
-
-#: templates/tmpadmin/registration/logged_out.html:10
-msgid "Log in again"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_change_done.html:3
-#: templates/tmpadmin/registration/password_change_form.html:4
-msgid "Documentation"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_change_done.html:7
-#: templates/tmpadmin/registration/password_change_form.html:8
-msgid "Password change"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_change_done.html:14
-msgid "Your password was changed."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_change_form.html:26
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_change_form.html:54
-#: templates/tmpadmin/registration/password_reset_confirm.html:24
-msgid "Change my password"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_complete.html:7
-#: templates/tmpadmin/registration/password_reset_done.html:7
-#: templates/tmpadmin/registration/password_reset_form.html:7
-msgid "Password reset"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_complete.html:16
-msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_confirm.html:7
-msgid "Password reset confirmation"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_confirm.html:17
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_confirm.html:21
-msgid "New password:"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_confirm.html:23
-msgid "Confirm password:"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_confirm.html:29
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_done.html:15
-msgid ""
-"We've emailed you instructions for setting your password, if an account "
-"exists with the email you entered. You should receive them shortly."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_done.html:17
-msgid ""
-"If you don't receive an email, please make sure you've entered the address "
-"you registered with, and check your spam folder."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_email.html:2
-#, python-format
-msgid ""
-"You're receiving this email because you requested a password reset for your "
-"user account at %(site_name)s."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_email.html:4
-msgid "Please go to the following page and choose a new password:"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_email.html:8
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_email.html:10
-msgid "Thanks for using our site!"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_email.html:12
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_form.html:15
-msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
-"instructions for setting a new one."
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_form.html:19
-msgid "Email address:"
-msgstr ""
-
-#: templates/tmpadmin/registration/password_reset_form.html:19
-msgid "Reset my password"
 msgstr ""
 
 #: templates/tmpadmin/related_widget_wrapper.html:8
@@ -615,33 +562,6 @@ msgstr ""
 #, python-format
 msgid "Delete selected %(model)s"
 msgstr ""
-
-#: templates/tmpadmin/search_form.html:9
-#, python-format
-msgid "%(counter)s result"
-msgid_plural "%(counter)s results"
-msgstr[0] ""
-msgstr[1] ""
-
-#: templates/tmpadmin/search_form.html:9
-#, python-format
-msgid "%(full_result_count)s total"
-msgstr ""
-
-#: templates/tmpadmin/submit_line.html:8
-msgid "Save as new"
-msgstr ""
-
-#: templates/tmpadmin/submit_line.html:9
-msgid "Save and add another"
-msgstr ""
-
-#: templates/tmpadmin/submit_line.html:10
-msgid "Save and continue editing"
-msgstr ""
-
-#~ msgid "User info"
-#~ msgstr "用户信息"
 
 #~ msgid "Login by Facebook Account"
 #~ msgstr "使用Facebook账号登陆"
